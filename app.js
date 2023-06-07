@@ -5,7 +5,8 @@ const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const _ = require("lodash")
 const mongoose = require("mongoose")
-mongoose.connect("mongodb+srv://admin-manoj:Test123@cluster0.g8oimmx.mongodb.net/postDB")
+// mongoose.connect("mongodb://127.0.0.1:27017/postDB")
+mongoose.connect(process.env.MONGO)
 const postSchema = mongoose.Schema({
   title: String,
   description: String
@@ -69,6 +70,6 @@ app.post("/compose", function (req, res) {
   post.insertMany({ title: req.body.title, description: req.body.body })
   res.redirect("/");
 })
-app.listen(process.env.PORT || 3000, function () {
-  console.log("servor running in port 3000");
+app.listen(process.env.PORT || 8080, function () {
+  console.log("servor running in port ");
 })
