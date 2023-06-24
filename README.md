@@ -1,3 +1,3 @@
 # Notes
 Hosted @ 
-https://notes-app-ukyu.onrender.com/
+https://notes-app-ukyu.onrender.com
